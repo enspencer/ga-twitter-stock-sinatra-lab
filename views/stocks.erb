@@ -1,0 +1,23 @@
+<div id="header">
+<h1> Stock info for:</h1>
+<h2 id="company"><%= @company %></h2>
+</div>
+
+<div id="block1">
+	<h3>Last reported price:</h3>
+	<%= @stock_last %>
+	<h3>Price at yesterday's close:</h3>
+	<%= @daily_close%>
+	<h3>Price at today's open:</h3>
+	<%= @daily_open %>
+	<h3>Stock high for the day:</h3>
+	<%= @high %>
+</div>
+
+<div id="block2">
+	<h3>Tweets</h3>
+	<% @tweets.each do |tweet| %>
+		<h4 class="tweet-user"><%= tweet.user.screen_name %></h5>
+		<p class="tweet-text"><%= tweet.text %></p>
+	<% end %>
+</div>
